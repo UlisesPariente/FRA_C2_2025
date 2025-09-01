@@ -56,6 +56,7 @@ while flag_cierre:
                     print ("\nNo se pudo registrar la atraccion asignada por favor reintentar:")
         
         contador +=1
+        
         if edad <=12:
             if  atracciones != "Casa del Terror":
                 print("\nPerfecto podra ingresar a la atraccion")
@@ -67,10 +68,16 @@ while flag_cierre:
             print ("\nPerfecto podra ingresar a la atraccion")
             
         
-        Continuar = str(input("Desea ingresar a otra atraccion?(Y/N) "))
+        Continuar = str(input("\nDesea ingresar a otra atraccion?(Y/N) "))
         if Continuar == "N" or Continuar == "n":
             break
         else:
             print ("\nPerfecto continuemos.")
             
     print ("\n----------",nombre,"----------\nCosto de entrada:",costo_total_ingreso,"\nAtracciones elegidas:",Atracciones_ingresadas)
+
+    Continuar = str(input("\nDesea ingresar a otra Persona?(Y/N) "))
+    if Continuar == "N" or Continuar == "n":
+        flag_cierre=False
+    else:
+        print ("\nPerfecto continuemos.")
