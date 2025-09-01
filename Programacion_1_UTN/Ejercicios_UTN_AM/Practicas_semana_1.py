@@ -27,20 +27,25 @@ while flag_cierre:
     edad= int(input("\nIngrese la edad del mismo: "))
     contador =0
     costo_total_ingreso=0
+    Atracciones_ingresadas=""
     while contador<3:
         if edad <=6 :
             print("\nAvisarle que al ser menor de 7 años, el unico juego que puede participar es el Carrusel\n")
             costo_total_ingreso += Carrusel
+            Atracciones_ingresadas+="Carrusel"
             break
         
         flag_match = True
         while flag_match:
             atracciones = str(input("\nIngresar de a una atraccion a cual quiere ingresar: ")) 
+            Atracciones_ingresadas+="\n"
+            Atracciones_ingresadas+=atracciones
             match atracciones:
                 
                 case "Carrusel":
                     costo_total_ingreso += Carrusel
                     flag_match =False  
+                                    
                 case "Montaña Rusa":
                     costo_total_ingreso += Montaña_Rusa
                     flag_match =False
@@ -61,10 +66,11 @@ while flag_cierre:
         else:
             print ("\nPerfecto podra ingresar a la atraccion")
             
+        
         Continuar = str(input("Desea ingresar a otra atraccion?(Y/N) "))
         if Continuar == "N" or Continuar == "n":
             break
         else:
             print ("\nPerfecto continuemos.")
-        
-        
+            
+    print ("\n----------",nombre,"----------\nCosto de entrada:",costo_total_ingreso,"\nAtracciones elegidas:",Atracciones_ingresadas)
