@@ -7,8 +7,7 @@
 #○ mostrar_atracciones() → muestra el menú de atracciones.
 #○ puede_subir(edad, atraccion) → devuelve True/False según si puede acceder a la atracción.
 #○ calcular_precio(atraccion) → devuelve el precio de la atracción.
-#○ registrar_visita() → pide datos del visitante, procesa las atracciones elegidas y retorna el
-#resumen.
+#○ registrar_visita() → pide datos del visitante, procesa las atracciones elegidas y retorna el resumen.
 #○ mostrar_resumen(resumen) → imprime en pantalla la información del visitante.
 #2. Modularización
 #● Guardar el código en dos archivos:
@@ -23,36 +22,73 @@
 #● Usar colores en la salida (ejemplo: mensajes de error en rojo, éxito en verde, menú en amarillo).
 #5. Nueva funcionalidad
 #● Agregar la opción de calcular un descuento del 10% si el visitante compra 3 o más atracciones.
-def Confirmaciones(dato_a_confirmar):
-    while True:
-        confirmacion= str(input(f"Usted marco {dato_a_confirmar}\nEs correcto?(Y/N) "))
-        if confirmacion == "n" or confirmacion=="N":
-            dato_a_confirmar = input("Vuelva a ingresar el dato por favor: ")
-        elif confirmacion == "y" or confirmacion=="Y":
-            print (f"Excelente en ese caso continuemos.")
-            break
+
+def Calcular_precio_atracciones (Atraccion):
+    match Atraccion:
+        case 1:
+            return 800
+        case 2:
+            return 1500
+        case 3:
+            return 1200
+        
+    
+def puede_subir(edad, atraccion):
+    if edad <= 6:
+        if atraccion == 1:
+            return True
         else:
-            print (f"Disculpa no le entendi, intente nuevamente por favor.\n")
+            return False
+    elif edad<=12:
+        if atraccion != 3:
+            return False
+        else:
+            return True
+    else:
+        return True
+        
+def mostrar_atracciones():
+    atraccion=str(input("Seleccione alguna de las opciones:\n-Carrucel-\n-Montaña Rusa-\n-Casa de Terror-\n"))
+    return atraccion     
+#○ registrar_visita() → pide datos del visitante, procesa las atracciones elegidas y retorna el resumen.
 
-def continuar(dato_a_confirmar):
+def Desea_continuar():
+    continuar=str(input("Desea continuar?(Y/N) "))
     while True:
-        break
+        if continuar == "Y" or continuar =="y":
+            return True
+        elif continuar =="N" or continuar =="n":
+            return False
+        else:
+            print (f"Disculpa no entendi.")
 
-def menu():
-    print("//////////////////////////\nBienvenido a PYTHONLAND\n//////////////////////////")
-    flag_match=True
-    while flag_match:
-        atracciones=int(input(f"\nIndique a que atraccion desea ingresar:\n[1] Carrucel\n[2]Montaña Rusa\n[3]Casa de Terror\n"))
+def registra_visita():
+    resumen = []
+    nombre= str(input(f"Ingrese su nombre: "))
+    edad= int (input(f"Ingrese la edad de {nombre}: "))
+    resumen.append(nombre,edad)
+    flag_atracciones=True
+    while flag_atracciones:
+        atracciones= mostrar_atracciones()
+        if Desea_continuar() == False:
+            flag_atracciones=False
+        resumen.append(atracciones)
+    return resumen
+
+#○ mostrar_resumen(resumen) → imprime en pantalla la información del visitante.
+
+def mostrar_resumen(resumen):
+    print (f"Nombre del visitante: {resumen[0]}\nEdad de {resumen[0]}: {resumen[1]}\nLas atracciones elegidas son:")
+    for i in range (resumen[1],len(resumen)):
+        print(f"\n{resumen[i]}")
+    
+def MENU_PYTHONLAND():
+    while True:
+        print("//////////////////////////\nBienvenido a PYTHONLAND\n//////////////////////////")
+        flag_atracciones=True
+        while flag_atracciones:
+            mostrar_atracciones()
+
+           
         
-        Confirmaciones(atracciones)
-        
-        match atracciones:
-            case 1:
-                print ()
-            case 2:
-                print()
-            case 3:
-                print()    
-        
-        
-menu()
+
