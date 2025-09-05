@@ -56,9 +56,9 @@ def registra_visita():
                 atracciones = "Montaña Rusa"
             case "3":
                 atracciones = "Casa de Terror"
+        resumen.append(atracciones)
         if Desea_continuar() == False:
             flag_atracciones=False
-        resumen.append(atracciones)
     return resumen
 
 #○ mostrar_resumen(resumen) → imprime en pantalla la información del visitante.
