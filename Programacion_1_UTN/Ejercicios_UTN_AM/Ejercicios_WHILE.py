@@ -111,10 +111,13 @@ while flag_inicio:
 promedio = acumulador/contador
 print (f"Datos:\nCantiddad de datos ingresados: {contador}\nTotal acumulado: {acumulador}\nPromedio: {promedio}")
 #Solicitar al usuario que ingrese 5 números como mínimo y como máximo 10. Calcular la suma de los números ingresados y el promedio de los mismos.
-contador = 1
+contador = 0
 acumulador = 0 
 flag_inicio=True
 while flag_inicio:
+    if contador == 10: 
+        print (f"\nDisculpe excedio el ingreso de datos permitivo vamos a realizar un finalizado forzado.")
+        break
     numero=float(input(f"Ingrese un numero: "))
     contador += 1
     acumulador+= numero
@@ -130,6 +133,7 @@ while flag_inicio:
                 break
             else:
                 print(f"\nDisculpa no entendi.")
+            
 promedio = acumulador/contador
 print (f"Datos:\nCantiddad de datos ingresados: {contador}\nTotal acumulado: {acumulador}\nPromedio: {promedio}")
 #Integrador While
@@ -140,3 +144,47 @@ print (f"Datos:\nCantiddad de datos ingresados: {contador}\nTotal acumulado: {ac
 #El promedio de los números positivos.
 #El número positivo más grande.
 #El porcentaje de números negativos ingresados, respecto del total de ingresos.
+
+flag_inicio=True
+acumulador_positivo=0
+acumulador_negativo =0
+contador_positivo = 0
+contador_negativo = 0
+
+
+while flag_inicio:
+    num = float (input(f"\nIngrese el numero que desee: "))
+    if num < 0:
+        acumulador_negativo+=num    
+        contador_negativo+=1
+    else:
+        if contador_positivo == 0:
+            maximo_positivo = num
+            contador_positivo += 1
+            acumulador_positivo+=num
+        
+        else:
+            contador_positivo += 1
+            acumulador_positivo+=num 
+            if num>maximo_positivo:
+                maximo_positivo=num
+                
+    while True:
+        continuar = str(input("\nDesea continuar?(Y/N) "))
+        if continuar == "Y" or continuar == "y":
+            print  (f"Excelente en ese caso sigamos.")
+            break
+        elif continuar == "N" or continuar== "n":
+            flag_inicio=False
+            print(f"\nPerfecto detengamos el programa y calculemos los resultados.")
+            break 
+        else:
+            print (f"\nDisculpa no entendi.")
+
+promedio =acumulador_positivo /contador_positivo
+
+total_ingresado = contador_positivo + contador_negativo
+porsentaje_negativo = (contador_negativo*100)/total_ingresado
+
+print (f"\nDatos esenciales de los numeros ingresados:\nSuma acumulada de los numeros negativos: {acumulador_negativo}\nSuma acumulada de los numeros positivos: {acumulador_positivo}\nCantidad de numeros negativos ingresados: {contador_negativo}\nPromedio de los numeros positivos: {promedio}\nNumero posivito mas grande: {maximo_positivo}\nPorsentaje de numeros negativos ingresados: {int(porsentaje_negativo)}%")
+
