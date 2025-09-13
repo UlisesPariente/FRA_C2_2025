@@ -1,4 +1,4 @@
-#For
+"""#For
 #
 #Mostrar los números ascendentes desde el 1 al 10
 for i in range(10):
@@ -52,14 +52,14 @@ for i in range (1,num+1):
     if num%i ==0:
         contador += 1
         print (f"{num} / {i} = {num/i}")
-print (f"Cantidad de numeros divisores: {contador}")
+print (f"Cantidad de numeros divisores: {contador}")"""
 #Ingresar un número. Determinar si el número es primo o no.
 num = int (input(f"Ingrese un numero: "))
 flag_primo=True
 if num<=1:
     print ("No es primo")
 else:
-    for i in range (2,num+1):
+    for i in range (2,num):
         if num%i==0:
             print (f"No es primo")
             flag_primo=False
@@ -68,15 +68,19 @@ else:
         print (F"Es primo")
 #Ingresar un número. Mostrar cada número primo que hay entre el 1 y el número ingresado. Informar cuántos números primos se encontraron.
 num = int (input(f"Ingrese un numero: "))
-flag_primo=True
+
+contador =0
 if num<=1:
     print ("No es primo")
 else:
     for i in range (2,num+1):
-        for j in range (i):
+        flag_primo=True
+        for j in range (2,i):
             if i%j==0:
-                print (f"No es primo")
                 flag_primo=False
+                break
             
-    if flag_primo == True:
-        print (F"Es primo")
+        if flag_primo == True:
+            contador +=1
+            print (F"Es primo {i}")
+print (f"Cantidad de numeros primos encontrados {contador}")
