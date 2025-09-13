@@ -40,8 +40,43 @@ for i in range (50):
     if i%2==0:
         print (i)
 #Realizar un programa que permita mostrar una pirámide de números. Por ejemplo: si se ingresa el numero 5, la salida del programa será la siguiente:
-#
-#
+num=int (input(f"Ingrese un numero: "))
+numeracion = ""
+for i in range (1,num+1):
+    numeracion +=  (f"{i} ")
+    print (numeracion)
 #Ingresar un número. Mostrar todos los divisores que hay desde el 1 hasta el número ingresado. Mostrar la cantidad de divisores encontrados.
+num = int (input(f"Ingrese un numero: "))
+contador = 0
+for i in range (1,num+1):
+    if num%i ==0:
+        contador += 1
+        print (f"{num} / {i} = {num/i}")
+print (f"Cantidad de numeros divisores: {contador}")
 #Ingresar un número. Determinar si el número es primo o no.
+num = int (input(f"Ingrese un numero: "))
+flag_primo=True
+if num<=1:
+    print ("No es primo")
+else:
+    for i in range (2,num+1):
+        if num%i==0:
+            print (f"No es primo")
+            flag_primo=False
+            break
+    if flag_primo == True:
+        print (F"Es primo")
 #Ingresar un número. Mostrar cada número primo que hay entre el 1 y el número ingresado. Informar cuántos números primos se encontraron.
+num = int (input(f"Ingrese un numero: "))
+flag_primo=True
+if num<=1:
+    print ("No es primo")
+else:
+    for i in range (2,num+1):
+        for j in range (i):
+            if i%j==0:
+                print (f"No es primo")
+                flag_primo=False
+            
+    if flag_primo == True:
+        print (F"Es primo")
