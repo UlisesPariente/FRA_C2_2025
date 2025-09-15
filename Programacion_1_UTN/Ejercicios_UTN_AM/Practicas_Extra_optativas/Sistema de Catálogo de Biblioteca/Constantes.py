@@ -1,7 +1,6 @@
 CANTIDAD_DE_LIBROS = 20
 EJEMPLARES = [0] * CANTIDAD_DE_LIBROS
 TITULOS = [""] * CANTIDAD_DE_LIBROS
-CONTADOR = 0
 
 
 def carga_de_datos():
@@ -11,12 +10,19 @@ def carga_de_datos():
 #3. Opciones del menú:
 #1. Cargar títulos y ejemplares
 #Permitir al usuario ingresar hasta 20 títulos y la cantidad de ejemplares para cada uno.
+
+
+
 def Cargar_titulos_y_ejemplares():
+    for i in range (CANTIDAD_DE_LIBROS):
         print (f"\n////Titulo////")
-        TITULOS [CONTADOR] = carga_de_datos()
-        print (f"\n////Ejemplares de {TITULOS[CONTADOR]}////")
-        EJEMPLARES [CONTADOR] = carga_de_datos()
-        CONTADOR += 1
+        TITULOS [i] = carga_de_datos()
+        if TITULOS[i] == "":
+            print (f"Finalizando el proceso\nRegresando al menu\n______________________________________________________________________________________________")
+            break
+        print (f"\n////Ejemplares de {TITULOS[i]}////")
+        EJEMPLARES [i] = carga_de_datos()
+
     
 #2. Mostrar catálogo completo
 #Listar cada título con su número de ejemplares.
