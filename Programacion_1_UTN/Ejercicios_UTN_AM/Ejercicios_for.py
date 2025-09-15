@@ -1,4 +1,4 @@
-"""#For
+#For
 #
 #Mostrar los números ascendentes desde el 1 al 10
 for i in range(10):
@@ -52,7 +52,7 @@ for i in range (1,num+1):
     if num%i ==0:
         contador += 1
         print (f"{num} / {i} = {num/i}")
-print (f"Cantidad de numeros divisores: {contador}")"""
+print (f"Cantidad de numeros divisores: {contador}")
 #Ingresar un número. Determinar si el número es primo o no.
 num = int (input(f"Ingrese un numero: "))
 flag_primo=True
