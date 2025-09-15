@@ -1,10 +1,11 @@
 import Constantes
 
 
-while Constantes.flag_exit:
-    menu = int(input(f"Bienvenido a la biblioteca\nSeleccione una de las opciones:\n[1] Cargar titulos y ejemplares\n[2] Mostrar catalogo completo\n[3] Consultar disponibilidad\n[4] Listar títulos agotados\n[5] Agregar un nuevo título\n[6] Actualizar ejemplares\n[7] Salir"))
+while True:
+    menu = int(input(f"Bienvenido a la biblioteca\nSeleccione una de las opciones:\n[1] Cargar titulos y ejemplares\n[2] Mostrar catalogo completo\n[3] Consultar disponibilidad\n[4] Listar títulos agotados\n[5] Agregar un nuevo título\n[6] Actualizar ejemplares\n[7] Salir\n"))
     match menu: 
         case 1:
+            print (f"/////////////////////////////\nPara FINALIZAR EL PROCESO\nNO ingrese ningun dato en el titulo\n/////////////////////////////")
             Constantes.Cargar_titulos_y_ejemplares()
         case 2:
             Constantes.Mostrar_catalogo_completo()
