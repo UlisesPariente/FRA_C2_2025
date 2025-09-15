@@ -42,9 +42,9 @@ for i in range (len(Constantes.TITULOS)):
     if Constantes.EJEMPLARES[i] == 0:
         print(f"\n{Constantes.TITULOS} AGOTADO")
 #5. Agregar un nuevo título
-
 #Permitir al usuario agregar un nuevo libro y su cantidad de ejemplares si no se superó el máximo
 #de 20.
+
 #6. Actualizar ejemplares (préstamo / devolución)
 #Permitir al usuario modificar el número de ejemplares de un libro existente.
 #7. Salir
