@@ -58,8 +58,15 @@ def agregar_un_nuevo_titulo():
 #Permitir al usuario modificar el número de ejemplares de un libro existente.
 def actualizar_ejemplares():
     Titulo_prestamo = str(input("Ingrese el libro que regreso: "))
-    cantidad_prestamo = int(input("Ingrese la cantidad que regresaron: "))
+    motivo = str(input(f"Indica si es una Devolucion (D) o un Prestamo (P): "))
+    if motivo != "D" or motivo != "P":
+        while True:
+            motivo= str(input(f"Disculpa no te entendi.\nDetermine si es por un prestamo (P) o una devolucion (D) por lo que esta aqui: ")) 
+    cantidad_prestamo_devolucion = int(input(f"Ingrese la cantidad de {Titulo_prestamo}: "))
     for i in range (CANTIDAD_DE_LIBROS):
         if TITULOS[i] == Titulo_prestamo:
-            EJEMPLARES[i] += cantidad_prestamo
+            if motivo == "D":
+                EJEMPLARES[i] += cantidad_prestamo_devolucion
+            else:
+                EJEMPLARES[i] -= cantidad_prestamo_devolucion
             print ("\nSe actualizo correctamente.") 
