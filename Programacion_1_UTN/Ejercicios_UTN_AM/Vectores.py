@@ -1,3 +1,4 @@
+import random
 #1 Cargar y mostrar array:
 #Declarar un array de 5 enteros. Cargarlo por teclado y mostrar su contenido por pantalla usando un
 #ciclo for.
@@ -35,18 +36,30 @@ print (f"Promedio {acumulador/len(array_eje_3)}")
 
 #4. Contar mayores a un valor:
 #Cargar un array de 8 enteros. Contar cuántos son mayores al valor 100 e informar el resultado.
-array_eje4= [0]*8
-
+array_eje4 = [0]*8
+contador = 0
+for i in range (len(array_eje4)):
+    num = input ("Ingrese numeros: ")
+    array_eje4 [i] = num
+    if num > 100:
+        contador += 1
+print (f"Cantidad de numeros mayores a 100, ingresados es de {contador}")
 
 
 #5. Buscar un valor:
-
-
-
 #Cargar un array de 10 enteros. Solicitar al usuario un número y verificar si se encuentra en el array.
 #Informar la posición en caso afirmativo, o indicar que no se encuentra.
-#6. Mayor y su posición:
-#Cargar un array de 7 números enteros. Determinar el valor más alto y en qué posición se
+
+array_eje5 = [0]*10°
+for i in range (len(array_eje5)):
+    if num == array_eje5[i]:
+        print (f"se enconcontr en la posicion {i} del array")
+    else:
+        print (f"No se encuentra")
+        
+           
+#Cargar un array de 7 números enteros. D
+#6. Mayor y su posición:eterminar el valor más alto y en qué posición se
 #encuentra.
 #7. Invertir orden:
 #Cargar un array de 6 enteros y mostrarlo invertido, es decir, desde el último al primero.
