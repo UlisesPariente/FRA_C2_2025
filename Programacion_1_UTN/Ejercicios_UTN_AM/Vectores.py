@@ -24,9 +24,25 @@ print (f"suma de elementos del array {suma_de_elementos}")
 #3. Promedio de valores:
 #Declarar un array de 6 números reales (floats). Cargarlo por teclado. Calcular y mostrar el promedio
 #de los valores.
+
+array_eje_3 = [0]*6
+acumulador = 0
+for i in range (len (array_eje_3)):
+    num= float (input("Ingrese numeros float: "))
+    acumulador += num
+    array_eje_3 [i]= num
+print (f"Promedio {acumulador/len(array_eje_3)}")
+
 #4. Contar mayores a un valor:
 #Cargar un array de 8 enteros. Contar cuántos son mayores al valor 100 e informar el resultado.
+array_eje4= [0]*8
+
+
+
 #5. Buscar un valor:
+
+
+
 #Cargar un array de 10 enteros. Solicitar al usuario un número y verificar si se encuentra en el array.
 #Informar la posición en caso afirmativo, o indicar que no se encuentra.
 #6. Mayor y su posición:
