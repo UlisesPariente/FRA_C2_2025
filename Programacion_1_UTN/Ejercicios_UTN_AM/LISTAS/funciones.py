@@ -222,26 +222,48 @@ playlist_lady_gaga = [
         "Fecha lanzamiento": "2025-06-10"
     }
 ]
-titulo=[]
-vistas = []
-duracion = []
-link =[]
-fecha_de_lanzamiento = []
-def normalizacion_de_datos (playlist_lady_gaga):
+
+Titulo = []
+Colaboradores = []
+Vistas = []
+Duracion = []
+Link = []
+Fecha_de_lanzamiento = []
+
+def Normalizacion_de_Datos ():
     for i in range (len(playlist_lady_gaga)):
-        for j in range (5):
-            match j:
-                case 1:
-                    titulo.append (playlist_lady_gaga[i,j])
-                case 2:
-                    vistas.append (playlist_lady_gaga[i,j])
-                case 3:
-                    duracion.append (playlist_lady_gaga[i,j])
-                case 4:
-                    link.append (playlist_lady_gaga[i,j])
-                case 5:
-                    fecha_de_lanzamiento.append (playlist_lady_gaga[i,j])
-    return titulo, vistas, duracion, link, fecha_de_lanzamiento
+        Cancion = playlist_lady_gaga[i]
+        tema = Cancion["Tema"]
+        
+        flag_tema = False
+        for i in range (len(tema)):
+            if tema[i] != "-":
+                True
+            elif tema [i] == "-":
+                lugar_del_separador = i
+                break
+        if flag_tema == True:
+            titulo_del_tema = tema
+        else:
+            for i in range (lugar_del_separador+1,len(tema)):
+                titulo_del_tema += tema[i]
+        
+        
+        Titulo.append(titulo_del_tema)
+        
+        
+        
+        Colaboradores.append (Cancion["Tema"])
+        
+        
+        Vistas.append (Cancion (int["Vistas"]))
+        Duracion.append (Cancion(int["Duracion"]))
+        Link.append (Cancion["Link Youtube"])
+        Fecha_de_lanzamiento.append (Cancion ["Fecha lanzamiento"])
+    
+    return Titulo, Colaboradores, Vistas, Duracion, Link, Fecha_de_lanzamiento
+
+Normalizacion_de_Datos()
 #🔹 2. Mostrar Lista de Temas
 #Se presentará la lista de todos los temas en formato tabular. No es necesario mostrar todos los datos, solo los esenciales (por ejemplo, título y duración).
 
