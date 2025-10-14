@@ -231,6 +231,7 @@ Link = []
 Fecha_de_lanzamiento = []
 
 def Normalizacion_de_Datos ():
+    titulo_del_tema = ""
     for i in range (len(playlist_lady_gaga)):
         Cancion = playlist_lady_gaga[i]
         tema = Cancion["Tema"]
@@ -245,7 +246,7 @@ def Normalizacion_de_Datos ():
         if flag_tema == True:
             titulo_del_tema = tema
         else:
-            for i in range (lugar_del_separador+1,len(tema)):
+            for i in range (lugar_del_separador+2,len(tema)):
                 titulo_del_tema += tema[i]
         
         
@@ -256,8 +257,8 @@ def Normalizacion_de_Datos ():
         Colaboradores.append (Cancion["Tema"])
         
         
-        Vistas.append (Cancion (int["Vistas"]))
-        Duracion.append (Cancion(int["Duracion"]))
+        Vistas.append (Cancion ["Vistas"])
+        Duracion.append (Cancion["Duracion"])
         Link.append (Cancion["Link Youtube"])
         Fecha_de_lanzamiento.append (Cancion ["Fecha lanzamiento"])
     
