@@ -8,100 +8,113 @@
 ATRACCIONES = [["Montaña Rusa",1500], ["Casa del Terror",1200], ["Carrusel",800]]
 
 
-def Montaña_Rusa_Verificador_Edad(edad,nombre):
+def Montaña_Rusa_Verificador_Edad(edad):
     if edad >= 12:
-        print (f"Bienvenido {nombre}, en tu caso cumplis con la edad requerida para la Montaña Rusa")
+        print (f"» En tu caso cumplis con la edad requerida para la Montaña Rusa")
         return True
     else:
-        print(f"Bienvenido {nombre}, en tu caso NO cumplis con la edad minima para la Montaña Rusa")
+        print(f"» En tu caso NO cumplis con la edad minima para la Montaña Rusa")
         return False
     
     
-def Carrusel_restriccion_de_edad(edad,nombre):
+def Carrusel_restriccion_de_edad(edad):
     if edad<6:
-        print (f"Bienvenido {nombre}, en tu caso solo podras concluir al carrusel")
+        print (f"» En tu caso solo podras concluir al carrusel")
         return True
     else:
         return False
         
 def calculador_de_precios_TOTAL (atracciones):
     acumulador = 0 
-    for i in range (len(atracciones)):
-        acumulador += atracciones[i][1]
-    return acumulador
+    if len(atracciones) == 0:
+        return (f"$0 (No ingreso a ninguna atraccion)")
+    else:    
+        for i in range (len(atracciones)):
+            acumulador += atracciones[i][1]
+        return (f"${acumulador}")
     
         
 def ingreso_datos_secuenciales():
     
-    Nombre_del_Visitante = str(input ("Ingrese el nombre del visitante: \n"))
+    Nombre_del_Visitante = str(input ("» Ingrese el nombre del visitante: \n"))
     while True:
         if Nombre_del_Visitante == "":
-            Nombre_del_Visitante= str(input("No llego a entenderse el nombre del visitante, desea ingresarlo nuevamente? Y/N\n "))
+            Nombre_del_Visitante= str(input("» No llego a entenderse el nombre del visitante, desea ingresarlo nuevamente? Y/N\n "))
             if Nombre_del_Visitante == "Y" or Nombre_del_Visitante == "y":
-                Nombre_del_Visitante = str(input("Perfecto, como te llamas entonces?\n"))
+                Nombre_del_Visitante = str(input("» Perfecto, como te llamas entonces?\n"))
                 break
             if Nombre_del_Visitante == "N" or Nombre_del_Visitante == "n":
-                print ("Hasta la proxima, lo esperamos")
+                print ("» Hasta la proxima, lo esperamos")
                 break
             else:
-                print ("Disculpa no se entendio lo escrito, intente nuevamente")
+                print ("» Disculpa no se entendio lo escrito, intente nuevamente")
+        
+        else:
+            break
         
         
-        
-        
-    edad_del_visitante = int(input(f"Ingrese la edad de {Nombre_del_Visitante}: "))
+    edad_del_visitante = int(input(f"» Ingrese la edad de {Nombre_del_Visitante}:\n"))
     if edad_del_visitante < 0:
-        edad_del_visitante = input(f"edad registrada no valida, intente nuevamente\nCuantos años tenes? ")
+        edad_del_visitante = int(input(f"Edad registrada no valida, intente nuevamente\nCuantos años tenes?\n"))
 
 
     
 
-    print(f"Hola {Nombre_del_Visitante}, a que atraccion deseas subir hoy?\nTenemos:")
+    print(f"\n═════════════════════════════════════\n» Hola {Nombre_del_Visitante}, a que atraccion deseas subir hoy?\nTenemos:")
     atracciones_del_visitante=[]
-    for i in range (3):
+    numero = 3
+    for i in range (numero):
         while True:
             for i in range (len(ATRACCIONES)):
-                print (f"[{i+1}] {ATRACCIONES[1][0]} = ${ATRACCIONES[i][1]}")
+                print (f"» [{i+1}] {ATRACCIONES[i][0]} = ${ATRACCIONES[i][1]}")
+            print (f"¤ Para salir ingresar 0 ¤")
             atraccion_a_subir = int(input())
+            if atraccion_a_subir >3:
+                numero += 1
+                print (f"» Atraccion invalida, intente nuevamente con una de las 3 opciones.")
+            elif atraccion_a_subir == 0:
+                break
+                
+
 #2. Uso de condicionales    
 #○ Determinar si el visitante puede subir a la Montaña Rusa (solo si tiene 12 años o más).
             
-            if Montaña_Rusa_Verificador_Edad(edad_del_visitante,Nombre_del_Visitante) == False:
+            if Montaña_Rusa_Verificador_Edad(edad_del_visitante) == False:
                 if atraccion_a_subir == 1:
-                    print("Acceso denegado\nSeleccione otra atraccion")
+                    print("» Acceso denegado\nSeleccione otra atraccion")
                        
             else:
-                print ("Acceso permitido")
+                print ("» Acceso permitido")
                 break
     
 #○ Si el visitante tiene menos de 6 años, solo puede subir al Carrusel.
 #○ Los demás pueden acceder a todas las atracciones.
             
-            if Carrusel_restriccion_de_edad(edad_del_visitante,Nombre_del_Visitante) == True:
+            if Carrusel_restriccion_de_edad(edad_del_visitante) == True:
                 if atraccion_a_subir == 1 or atraccion_a_subir == 2:
-                    print ("Acceso denegado.\nSeleccione otra atraccion")
+                    print ("» Acceso denegado.\nSeleccione otra atraccion")
                     
                 else:
-                    print("Acceso permitido.")
+                    print("» Acceso permitido.")
                     break
+        if atraccion_a_subir > 0 and atraccion_a_subir < 4:
+            atracciones_del_visitante.append(ATRACCIONES[atraccion_a_subir-1])   
         
-        atracciones_del_visitante.append(ATRACCIONES[atraccion_a_subir-1])   
         
-        
-        continuar = str(input("Desea ingresar otra atraccion? Y/N\n"))
+        continuar = str(input("\nDesea ingresar otra atraccion? Y/N\n"))
         if continuar == "N" or continuar == "n":
             break
         if continuar == "Y" or continuar =="y":
-            print ("\n_______________\n")
+            print ("\n═════════════════════════════════════\n")
         else:
             print ("\nSe detecto un caracter irreconocible, vuelva a tratar.")            
 
 #3. Uso de ciclos
 #○ Calcular el costo total de las entradas (ejemplo: Montaña Rusa = $1500, Casa del Terror =$1200, Carrusel = $800).
-    print(f"Nombre {Nombre_del_Visitante}\nAtracciones:")
+    print(f"\n═════════════════════════════════════\n» Nombre: {Nombre_del_Visitante}\n»Edad: {edad_del_visitante}\n» Atracciones que desea ingresar:")
     for i in range (len(atracciones_del_visitante)):
-        print (f"-{atracciones_del_visitante[i][0]}")
-    print(f"Precio total a pagar es ${calculador_de_precios_TOTAL(atracciones_del_visitante)}")
+        print (f"   » {atracciones_del_visitante[i][0]}")
+    print(f"» Precio total a pagar es {calculador_de_precios_TOTAL(atracciones_del_visitante)}\n═════════════════════════════════════")
     
 
 ingreso_datos_secuenciales()
