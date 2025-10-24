@@ -274,19 +274,26 @@ Normalizacion_de_Datos()
 
 #🔹 3. Ordenar Temas
 #Los videos se ordenarán por duración, de mayor a menor.
+
 #🔹 4. Promedio de Vistas
 #Se calculará y mostrará el promedio de vistas de todos los videos en millones.
+
 #🔹 5. Máxima Reproducción
 #Se listará el video (o los videos) con la mayor cantidad de vistas.
+
 #🔹 6. Mínima Reproducción
 #Se listará el video (o los videos) con la menor cantidad de vistas.
+
 #🔹 7. Búsqueda por Código
 #El usuario ingresará un código de video y el programa mostrará todos los detalles asociados a ese video.
 #
+
 #🔹 8. Listar por Colaborador
 #El usuario ingresará el nombre de un colaborador (de una lista de colaboradores existentes) y el programa mostrará todos los videos en los que haya participado.
+
 #🔹 9. Listar por Mes de Lanzamiento
 #El usuario ingresará un mes y se listarán todos los temas lanzados en ese mes, sin importar el año.
+
 #🔹 10. Salir
 #Finalizar la ejecución del programa.
 #📌 Requisitos del Desarrollo
