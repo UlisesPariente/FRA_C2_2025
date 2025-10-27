@@ -20,3 +20,7 @@ def validar_catalogo_vacio (lista):
     return True
 
 # preguntamos que si el tanaño de nuestra lista es = 0 osea no hay elementos de la lista, y de lo contrario retorna true diciendo que hay elementos en la lista
+
+def validar_positivo(numero):
+    valor = int (numero)
+    return valor > 0 
