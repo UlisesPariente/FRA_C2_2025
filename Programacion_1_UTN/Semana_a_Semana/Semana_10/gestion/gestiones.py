@@ -55,5 +55,13 @@ def ingresar_o_modificar_juego (nuevo = True,catalogo = None, nombre_archivo = "
         "min" : min_jugadores,
         "max" : max_jugadores,
         "atp" : apto_texto
-}
+        }
+        
+    if nuevo :
+        pass
+        #agregar un nuevo juego
+    else:
+        pass
+        # usar posicion para modificar un juego existente
+        # guardar el catalogo nuevo
         
