@@ -15,4 +15,4 @@ def cargar_catalogo (nombre_archivo):
         
         for line in archivo:
             line.strip()# primero elimina las posibilidades de los espacios en vacio al principio o final del campo
-            if 
+            
