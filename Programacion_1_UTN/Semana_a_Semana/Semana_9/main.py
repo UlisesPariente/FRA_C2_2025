@@ -12,7 +12,7 @@
         1. nombre o ruta del archivo
         
         2. modo de apertura 
-            * r (read//leer)
+            * r (read//leer) lee el archivo unicamente.
             * w (write//escribir) "si el archivo no existe lo crea // si existe lo pisa"
             es decir sobreescribe y perdemos informacion anterior
             * a (append//agregar) "si el archivo existe lo agrega al final // si no existe lo crea"
