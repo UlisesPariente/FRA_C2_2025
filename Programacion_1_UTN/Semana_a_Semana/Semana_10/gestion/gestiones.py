@@ -22,12 +22,38 @@ def ingresar_o_modificar_juego (nuevo = True,catalogo = None, nombre_archivo = "
         nombre =input ("Nombre de juego: ")
     
     min_jugadores = input(f"Cantidad minima de jugadores: ")
-    while not validar.validar_numero(min_jugadores):
+    while not validar.validar_numero(min_jugadores) and validar.validar_positivo(min_jugadores):
         print (F"Debe ingresar un numero entero...")
         min_jugadores = input(f"Cantidad minima de jugadores: ")
     
-    max_jugadores = input(f"Cantidad minima de jugadores: ")
-    while not validar.validar_numero(max_jugadores):
+    max_jugadores = input(f"Cantidad maxima de jugadores: ")
+    while not validar.validar_numero(max_jugadores)and validar.validar_positivo(max_jugadores):
         print (F"Debe ingresar un numero entero...")
-        max_jugadores = input(f"Cantidad minima de jugadores: ")
+        max_jugadores = input(f"Cantidad maxima de jugadores: ")
+        
+    apto =  input (f"Es apto publico? (S/N)").lower()
+    while apto not in ["s","n"]:
+        print (f'Debe ingresar "s" o "n"')
+        apto = input(f"Es apto publico? (S/N) ").lower()
+    # Pyhton toma todo dato verdadero aquellos que tengan un valor sobre el 0, el vacio y el False, siempre que este sobre encima de eso lo toma como verdadero
+        #cadena = "NOMBRE"  ->  TRUE
+        #numero = 5         ->  TRUE
+        #Lista  = ["NOMBRE",4,2.3] -> TRUE
+        
+    # Python toma como falso los datos que esten vacios, que sean 0 o que sean falso 
+        # cadena = ""          -> FALSE
+        # numero = 0 // 0.0    -> FALSE
+        # lista  = [0,0.0,""]  -> FALSE
+ 
+    if apto == "si":
+        apto_texto = "Si"
+    elif apto == "no":
+        apto_texto = "No"
+        
+    juego = {
+        "nombre" : nombre,
+        "min" : min_jugadores,
+        "max" : max_jugadores,
+        "atp" : apto_texto
+}
         
