@@ -48,7 +48,7 @@ while True:
         break
     lista_lenguajes.append(lenguaje)
 set_lenguaje = set(lista_lenguajes)
-print (set_lenguaje)
+#print (set_lenguaje)
 """
 se utiliza el set para que muestre solamente los valores unicos, osea que no sea ningun dato repetido
 ya que los set (conjuntos) solo muestran o se quedan con los elementos unicos sin repeticiones
@@ -56,7 +56,7 @@ muy util para evitar usar una linea de codigo y verificar cada elemento que hay 
 """
 lista_ordenada = list (set_lenguaje)
 lista_ordenada.sort()
-print(lista_ordenada)
+#print(lista_ordenada)
 
 """
 el elemento sort es para que se ordene los elementos de forma numerica o alfabetica
@@ -80,7 +80,7 @@ ejemplo_diccionario["URL"]="www.sitio.com"
 ejemplo_diccionario["peliculas"].append("Sustancia")
 ejemplo_diccionario["series"].add("Lost")
 print (ejemplo_diccionario["categorias"][1])
-
+print(ejemplo_diccionario)
 """
 se manejan por pares pareja valor, ejemplo una clave numerica para ingresar al valor de la clase
 separando entre (:) y las comas para separar los pares
